@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(15, 36, 54, 0.478);
+            justify-content: center;
+            align-items: center;
+        }
+
+        form input {
+            margin: 10px;
+            padding: 5px;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{>navbar}}
+
+
+    <form action="/contact" method="POST">
+        <h1>Contact Form</h1>
+
+        <input type="text" name="name" id="name" placeholder="Enter Your Name">
+        <input type="email" name="email" id="email" placeholder="Enter Your Email">
+        <input type="textarea" name="textarea" id="textarea" placeholder="Enter Your Massage">
+        <input type="submit" value="Submit">
+
+    </form>
+
+    {{>footer}}
+</body>
+
+</html>

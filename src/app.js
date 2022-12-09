@@ -7,6 +7,7 @@ const hbs = require("hbs");
 require('./db/conn')
 
 const Register = require("./models/registers");
+const Contact = require("./models/contacts");
 const async = require("hbs/lib/async");
 
 const port = process.env.PORT || 3000;
@@ -31,6 +32,10 @@ app.get("/",(req,res)=>{
 
 app.get("/register",(req,res)=>{
     res.render("register");
+});
+
+app.get("/contact",(req,res)=>{
+    res.render("contact");
 });
 
 //for login page geting
@@ -89,6 +94,27 @@ app.post("/login",async(req,res)=>{
         res.status(400).send("Invalid email And Password");
     }
 });
+
+// ------------contact form 
+
+app.post("/contact",async(req,res)=>{
+
+    try {
+        const ContactData = new Contact({
+            name : req.body.name,
+            email : req.body.email,
+            textarea:req.body.textarea,
+        })
+
+        const contacted = await ContactData.save();
+        res.status(201).render("index");   
+         
+    } catch (error) {
+       res.status(400).send(error); 
+    }
+    
+});
+
 
 
 
