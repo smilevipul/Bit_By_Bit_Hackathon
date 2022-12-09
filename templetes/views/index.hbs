@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,194 @@
     <title>Travel World</title>
 
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
 
-        header{
+        header {
+            background-color: rgb(99, 97, 97);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem;
         }
+
+        header #logo {
+            font-size: 2rem;
+            color: white;
+        }
+
+        header #logo span {
+
+            color: rgb(255, 174, 0);
+        }
+
+        /* ------------------Home section css ---------------------------- */
+        #home {
+            height: 90vh;
+            background: url(https://source.unsplash.com/random) no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: aliceblue;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        #home .btn {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin: 2rem;
+            background-color: rgb(255, 174, 0);
+            border: 1px solid rgb(255, 174, 0);
+
+        }
+
+        #home .btn:hover {
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin: 2rem;
+            background-color: rgb(255, 174, 0);
+            box-shadow: 1px 2px 20px rgb(255, 174, 0);
+            border: 1px solid rgb(255, 174, 0);
+
+        }
+
+        /* ----------------------------Booking Section *----------------------*/
+        #booking{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #booking h1{
+            margin: 1rem;
+        }
+        #booking form {
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+
+
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(128, 128, 128, 0.232);
+            padding: 1rem;
+            width: 50%;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.485);
+        }
+
+        #booking form input {
+            margin: 1rem;
+            width: 80%;
+            padding: .7rem;
+            border-radius: 10px;
+        }
+
+
+        /* -----------------packagae section------------- */
+        #packages {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #packages .psub{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
     </style>
 </head>
+
 <body>
     <header>
-        <div class="logo"><span>WalkAbout</span></div>
+        <div id="logo"><span>Walk</span>About</div>
         {{>navbar}}
     </header>
-    
+
+    <div id="home">
+
+        <h1>Travel is an Investment in Yourself</h1>
+        <p>Discover New Places With Us, Advantures Awaits</p>
+        <button class="btn"> Discover More</button>
+    </div>
+
+    <div id="booking">
+        
+        <h1>Book Now</h1>
+
+        <form action="/booking" method="POST">
+         
+           
+            <label for="where">Where To</label>
+            <input type="text" name="where" id="where" placeholder="Enter Place">
+            <label for="howmany">How Many</label>
+
+            <input type="text" name="howmany" id="howmany" placeholder="Enter Number of people">
+            <label for="datea">Arrivals</label>
+
+            <input type="date" name="date" id="datea" placeholder="dd/mm/yyyy">
+            <label for="datel">Leaving</label>
+
+            <input type="date" name="date" id="datel" placeholder="dd/mm/yyyy">
+            <input type="submit" value="Book Now">
+        </form>
+    </div>
+
+    <div id="packages">
+        <h1>Packages</h1>
+
+        <div class="psub">
+            <div>
+                <img src="./p1.jpg" alt="img1">
+                <h2>Mumbai</h2>
+            </div>
+            <div>
+                <img src="" alt="img2">
+                <h2>Sikkim</h2>
+            </div>
+            <div>
+                <h2>Uttarakhand</h2>
+            </div>
+            <div>
+                <h2>Delhi</h2>
+            </div>
+            <div>
+                <h2>Manali</h2>
+            </div>
+            <div>
+                <h2>Bihar</h2>
+            </div>
+        </div>
+
+    </div>
+    <div id="services">
+        <h1>Services</h1>
+    </div>
+    <div id="gallery">
+        <h1>Gallery</h1>
+    </div>
+    <div id="reviews">
+        <h1>Reviews</h1>
+    </div>
+    <div id="contact">
+        <h1>Contact</h1>
+    </div>
+
     {{>footer}}
 </body>
+
 </html>
