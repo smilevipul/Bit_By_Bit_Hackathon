@@ -36,11 +36,13 @@
         }
 
         header {
-            background-color: rgb(99, 97, 97);
+            background-color: rgba(99, 97, 97, 0.538);
+
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem;
+            box-shadow: 0px 15px 10px -15px rgba(243, 3, 3, 0.266);
         }
 
         header #logo {
@@ -55,17 +57,14 @@
 
         /* ------------------Home section css ---------------------------- */
         #home {
-            height: 90vh;
-            background: url(https://source.unsplash.com/random) no-repeat;
-            background-size: cover;
-            background-position: center;
+            height: 100vh;
             display: flex;
 
             justify-content: center;
             align-items: center;
             flex-direction: column;
             color: aliceblue;
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 3rem;
             height: 50vh;
         }
@@ -200,6 +199,10 @@
             margin: 1rem;
         }
 
+        #myTable{
+            margin-bottom: 1rem;
+        }
+
         /* --------------------services ----------------------------------*/
         #services {
             display: flex;
@@ -235,6 +238,25 @@
             font-size: 4rem;
         }
 
+
+
+        /*-------------------Gallery--------------- */
+        #gallery{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #gallery .box{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        #gallery .box img{
+            height: 200px;
+            width: 200px;
+            margin: 1rem;
+        }
 
         /*------------------------ Reviews Section -------------------*/
         /* external css: flickity.css */
@@ -302,11 +324,38 @@
             padding: .5rem;
             border-radius: 15px;
         }
+
+        .h-primary{
+            padding: .5rem 1rem .5rem 1rem;
+            margin: 1rem 0 1 rem 0;
+            border-radius: 10px;
+           background-color: rgb(255, 174, 0);
+        }
+        #container{
+            background: url(https://images.pexels.com/photos/2904634/pexels-photo-2904634.jpeg?auto=compress&cs=tinysrgb&w=600) no-repeat;
+            background-color: rgba(0,0,0,0.25);
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            margin-bottom: 1rem;
+        }
+
+        /* ---------------responsive------------------- */
+        @media screen and (max-width:820){
+
+            header #logo {
+            font-size: .5rem;
+            color: white;
+        }
+            
+        }
     </style>
 </head>
 
 <body>
-    <header>
+
+ <div id="container">
+        <header>
         <div id="logo"><span>Walk</span>About</div>
         {{>navbar}}
     </header>
@@ -327,6 +376,7 @@
             <input type="submit" value="Explore Now" class="btn">
         </form>
     </div>
+ </div>
 
 
 
@@ -353,7 +403,7 @@
     </div> --}}
 
     <div id="packages">
-        <h1>Popular Tour Places</h1>
+        <h1 class="h-primary">Popular Tour Places</h1>
         <input type="text" id="myInput" placeholder="Enter City Name/Tour Places name" onkeyup="searchFunction()">
 
         <table id="myTable">
@@ -399,7 +449,7 @@
             </tr>
         </table>
 
-        <h1>Popular Cites for Tour</h1>
+        <h1 class="h-primary">Popular Cites for Tour</h1>
 
         <div class="psub">
             <div>
@@ -434,7 +484,7 @@
 
     </div>
     <div id="services">
-        <h1>Services</h1>
+        <h1 class="h-primary">Services</h1>
         <div class="ssub">
             <div id="box1">
                 <i class="fa-solid fa-hotel"></i>
@@ -470,10 +520,20 @@
         </div>
     </div>
     <div id="gallery">
-        <h1>Gallery</h1>
+        <h1 class="h-primary">Gallery</h1>
+
+        <div class="box">
+            <img src="https://images.pexels.com/photos/3672776/pexels-photo-3672776.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?b=1&s=612x612&w=0&k=20&c=JRmndTMyz627jxKiUjgXSJXrxwuAiHkHjefiRsyY2jc=" alt="">
+            <img src="https://media.istockphoto.com/id/1297349747/photo/hot-air-balloons-flying-over-the-botan-canyon-in-turkey.jpg?b=1&s=612x612&w=0&k=20&c=AA-85akfRli0ezxd5KTyI7Irxbt8lrQQxrVxRAckUTE=" alt="">
+            <img src="https://images.pexels.com/photos/750818/pexels-photo-750818.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+
+        </div>
     </div>
     <div id="reviews">
-        <h1>Reviews</h1>
+        <h1 class="h-primary">Reviews</h1>
 
         <!-- Flickity HTML init -->
         <div class="carousel" data-flickity='{ "autoPlay": true }'>
@@ -555,7 +615,7 @@
     </div>
 
     <div id="contact">
-        <h1>Contact</h1>
+        <h1 class="h-primary">Contact</h1>
         <form action="/contact">
             <input type="text" name="name" placeholder="Enter Your Name">
             <input type="email" name="email" placeholder="Enter Your Email">

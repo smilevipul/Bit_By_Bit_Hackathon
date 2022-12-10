@@ -10,33 +10,46 @@
 
 
     <style>
-        .navbar{
-            
-            position:sticky;
+        .navbar {
+            position: sticky;
         }
-     .navbar a{
-        text-decoration: none;
-        margin: .5rem;
-        color: aliceblue;
-        font-size: 1.2rem;
-     }
-     .navbar a:hover{
-         color: rgb(255, 174, 0);
-     }
+
+        .navbar a {
+            text-decoration: none;
+            margin: .5rem;
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        .navbar a:hover {
+            color: rgb(255, 174, 0);
+        }
+
+        /* -------------responsive ----------------*/
+        @media screen and (max-width : 820)
+        {
+            .navbar a {
+            text-decoration: none;
+            margin: .5rem;
+            color: aliceblue;
+            font-size: .8rem;
+        }
+        }
     </style>
-    </head>
+</head>
 
 <body>
     <nav class="navbar">
-            <a href="/">Home</a>
-            <a href="#book">Book</a>
-            <a href="#packages">Packages</a>
-            <a href="#services">Services</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#review">Review</a>
-            <a href="#contact">Contact</a>
-            <a href="/register">SignUp</a>
-            <a href="/login">Login</a>
+        <a href="/">Home</a>
+        <a href="#book">Book</a>
+        <a href="#packages">Packages</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+        <a href="/register">SignUp</a>
+        <a href="/login">Login</a>
+    </nav>
 </body>
 
 </html>
