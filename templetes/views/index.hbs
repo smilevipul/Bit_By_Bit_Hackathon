@@ -14,12 +14,13 @@
     {{!------------------- font awesome ----------- --}}
     <script src="https://kit.fontawesome.com/343b35a2df.js" crossorigin="anonymous"></script>
 
-    {{!---------------------- for map api  ------------------}}
+    {{!---------------------- for map api ------------------}}
     {{!-- jquery libraray --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     {{!-- -----------google maps js library------- --}}
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB4u7MWvSxrbGfH9NrpFkbLtPFiCK7eJy8&libraries=places"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB4u7MWvSxrbGfH9NrpFkbLtPFiCK7eJy8&libraries=places"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
@@ -37,7 +38,6 @@
 
         header {
             background-color: rgba(99, 97, 97, 0.538);
-
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -59,7 +59,6 @@
         #home {
             height: 100vh;
             display: flex;
-
             justify-content: center;
             align-items: center;
             flex-direction: column;
@@ -77,7 +76,6 @@
             margin: 2rem;
             background-color: rgb(255, 174, 0);
             border: 1px solid rgb(255, 174, 0);
-
         }
 
         #home .btn:hover {
@@ -118,7 +116,10 @@
 
         /* css for table */
 
-        table,tr,th,td {
+        table,
+        tr,
+        th,
+        td {
             border: 2px solid black;
             border-collapse: collapse;
             padding: 10px;
@@ -191,7 +192,7 @@
 
         }
 
-        #packages #myInput{
+        #packages #myInput {
             padding-right: 1rem;
             padding-left: 1rem;
             padding-top: .5rem;
@@ -199,7 +200,7 @@
             margin: 1rem;
         }
 
-        #myTable{
+        #myTable {
             margin-bottom: 1rem;
         }
 
@@ -241,18 +242,20 @@
 
 
         /*-------------------Gallery--------------- */
-        #gallery{
+        #gallery {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
-        #gallery .box{
+
+        #gallery .box {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
-        #gallery .box img{
+
+        #gallery .box img {
             height: 200px;
             width: 200px;
             margin: 1rem;
@@ -325,15 +328,16 @@
             border-radius: 15px;
         }
 
-        .h-primary{
+        .h-primary {
             padding: .5rem 1rem .5rem 1rem;
             margin: 1rem 0 1 rem 0;
             border-radius: 10px;
-           background-color: rgb(255, 174, 0);
+            background-color: rgb(255, 174, 0);
         }
-        #container{
+
+        #container {
             background: url(https://images.pexels.com/photos/2904634/pexels-photo-2904634.jpeg?auto=compress&cs=tinysrgb&w=600) no-repeat;
-            background-color: rgba(0,0,0,0.25);
+            background-color: rgba(0, 0, 0, 0.25);
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -341,42 +345,121 @@
         }
 
         /* ---------------responsive------------------- */
-        @media screen and (max-width:820){
 
-            header #logo {
-            font-size: .5rem;
-            color: white;
+
+        @media only screen and (max-width: 600px) {
+
+            header {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: .5rem;
+            }
+
+            #home h1 {
+                text-align: center;
+                font-size: 2rem;
+            }
+
+            #home p {
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            #visitform {
+                display: flex;
+                flex-direction: column;
+                background-color: whitesmoke;
+
+                padding-left: .5rem;
+                padding-right: .5rem;
+                margin: 1rem;
+                border-radius: 7px;
+                color: black;
+                box-shadow: 1px 1px 10px black;
+                font-size: 1rem;
+
+            }
+
+            #visitform input {
+                padding: .5rem;
+                border-radius: 7px;
+
+            }
+
+            #myTable {
+                margin-bottom: 1rem;
+
+            }
+
+            #packages #myInput {
+                padding-right: 1rem;
+                padding-left: 1rem;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+                margin: 1rem;
+                font-size: 1rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #packages .psub {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            #services .ssub {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            #gallery .box {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            #gallery .box img {
+                height: 100px;
+                width: 100px;
+                margin: .7rem;
+            }
+
         }
-            
-        }
+
+
+
     </style>
 </head>
 
 <body>
 
- <div id="container">
+    <div id="container">
         <header>
-        <div id="logo"><span>Walk</span>About</div>
-        {{>navbar}}
-    </header>
+            <div id="logo"><span>Walk</span>About</div>
+            {{>navbar}}
+        </header>
 
-    <div id="home">
+        <div id="home">
 
-        <h1>Travel is an Investment in Yourself</h1>
-        <p>Discover New Places With Us, Adventure Awaits</p>
-        {{!-- <button class="btn"> Discover More</button> --}}
+            <h1>Travel is an Investment in Yourself</h1>
+            <p>Discover New Places With Us, Adventure Awaits</p>
+            {{!-- <button class="btn"> Discover More</button> --}}
 
-        <form id="visitform" action="/visit" method="POST">
-            <label for="location">Location</label>
-            <input type="text" name="location" id="location" placeholder="Enter Your Destination">
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date" placeholder="dd/mm/yyyy">
-            <label for="number">People</label>
-            <input type="number" name="number" id="number" placeholder="How many people?">
-            <input type="submit" value="Explore Now" class="btn">
-        </form>
+            <form id="visitform" action="/visit" method="POST">
+                <label for="location">Location</label>
+                <input type="text" name="location" id="location" placeholder="Enter Your Destination">
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" placeholder="dd/mm/yyyy">
+                <label for="number">People</label>
+                <input type="number" name="number" id="number" placeholder="How many people?">
+                <input type="submit" value="Explore Now" class="btn">
+            </form>
+        </div>
     </div>
- </div>
 
 
 
@@ -523,12 +606,18 @@
         <h1 class="h-primary">Gallery</h1>
 
         <div class="box">
-            <img src="https://images.pexels.com/photos/3672776/pexels-photo-3672776.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-            <img src="https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?b=1&s=612x612&w=0&k=20&c=JRmndTMyz627jxKiUjgXSJXrxwuAiHkHjefiRsyY2jc=" alt="">
-            <img src="https://media.istockphoto.com/id/1297349747/photo/hot-air-balloons-flying-over-the-botan-canyon-in-turkey.jpg?b=1&s=612x612&w=0&k=20&c=AA-85akfRli0ezxd5KTyI7Irxbt8lrQQxrVxRAckUTE=" alt="">
-            <img src="https://images.pexels.com/photos/750818/pexels-photo-750818.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
-            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+            <img src="https://images.pexels.com/photos/3672776/pexels-photo-3672776.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+            <img src="https://media.istockphoto.com/id/904172104/photo/weve-made-it-all-this-way-i-am-proud.jpg?b=1&s=612x612&w=0&k=20&c=JRmndTMyz627jxKiUjgXSJXrxwuAiHkHjefiRsyY2jc="
+                alt="">
+            <img src="https://media.istockphoto.com/id/1297349747/photo/hot-air-balloons-flying-over-the-botan-canyon-in-turkey.jpg?b=1&s=612x612&w=0&k=20&c=AA-85akfRli0ezxd5KTyI7Irxbt8lrQQxrVxRAckUTE="
+                alt="">
+            <img src="https://images.pexels.com/photos/750818/pexels-photo-750818.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+            <img src="https://images.pexels.com/photos/772481/pexels-photo-772481.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
 
         </div>
     </div>
@@ -632,27 +721,26 @@
     <!--flikity  JavaScript -->
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-    {{!-- js for table search  --}}
+    {{!-- js for table search --}}
 
     <script>
-        const searchFunction = ()=>{
+        const searchFunction = () => {
             let filter = document.getElementById('myInput').value.toUpperCase();
 
             let myTable = document.getElementById('myTable');
 
             let tr = myTable.getElementsByTagName('tr');
 
-            for(var i =0;i<tr.length;i++)
-            {
+            for (var i = 0; i < tr.length; i++) {
                 let td = tr[i].getElementsByTagName('td')[1];
 
-                if(td){
+                if (td) {
                     let textvalue = td.textContent || td.innerHTML;
 
-                    if(textvalue.toUpperCase().indexOf(filter) > -1){
+                    if (textvalue.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";
                     }
-                    else{
+                    else {
                         tr[i].style.display = "none";
                     }
                 }
@@ -667,14 +755,14 @@
     {{!-- -----------------js for google maps api -------------- --}}
     <script type="text/javascript">
 
-    &(document).readyState(){
-        var autocomplete;
-        var id = 'location';
+    & (document).readyState(){
+            var autocomplete;
+            var id = 'location';
 
-        autocomplete = new google.maps.places.Autocomplete((document.getElementById(id)),{
-            types : ['geocode'],
-        })
-    }
+            autocomplete = new google.maps.places.Autocomplete((document.getElementById(id)), {
+                types: ['geocode'],
+            })
+        }
     </script>
 </body>
 

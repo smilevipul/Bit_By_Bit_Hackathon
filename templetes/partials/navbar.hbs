@@ -10,10 +10,6 @@
 
 
     <style>
-        .navbar {
-            position: sticky;
-        }
-
         .navbar a {
             text-decoration: none;
             margin: .5rem;
@@ -26,14 +22,24 @@
         }
 
         /* -------------responsive ----------------*/
-        @media screen and (max-width : 820)
-        {
-            .navbar a {
-            text-decoration: none;
-            margin: .5rem;
-            color: aliceblue;
-            font-size: .8rem;
+        @media only screen and (max-width: 600px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
         }
+        /*Tablets [601px -> 1200px]*/
+        @media only screen and (max-width: 1200px) {
+               .navbar {
+                display: flex;
+                font-size: .5rem;
+                justify-content: center;
+                align-items: center;
+            }
+
         }
     </style>
 </head>
