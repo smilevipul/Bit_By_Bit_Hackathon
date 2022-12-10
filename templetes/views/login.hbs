@@ -9,27 +9,86 @@
 
 
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+        .navbar{
+            background-color: rgba(0, 0, 0, 0.433);
+            color: whitesmoke;
+            padding: 1rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            margin: .5rem;
+            color: aliceblue;
+            font-size: 1.2rem;
+        }
+
+        .navbar a:hover {
+            color: rgb(255, 174, 0);
+        }
+
+        /* -------------responsive ----------------*/
+        @media only screen and (max-width: 600px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+        }
+        /*Tablets [601px -> 1200px]*/
+        @media only screen and (max-width: 1200px) {
+               .navbar {
+                display: flex;
+                font-size: .5rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+        }
+
         form {
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            width: 50%;
+            margin: auto;
+            box-shadow: 2px 2px 20px black;
         }
         form input{
             width: 40%;
             margin: 10px;
             padding: 5px;
+            border-radius: 10px;
+        }
+
+         form .btn {
+            background-color: rgb(255, 174, 0);
+            border: 1px solid rgb(255, 174, 0);
+            
+        }
+        form .btn:hover {
+          box-shadow: 1px 1px 10px rgb(255, 174, 0);
+          color:whitesmoke;
+            
         }
     </style>
 </head>
 
 <body>
-    {{>navbar}}
+
+     {{>navbar}}
+    
     <form action="/login" method="POST">
     <h1>Login Form</h1>
         <input type="email" name="email" id="email" placeholder="Enter Your Email">
         <input type="password" name="password" id="password" placeholder="Enter Your Password">
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" class="btn">
 
     </form>
 

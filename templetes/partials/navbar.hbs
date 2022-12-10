@@ -26,8 +26,7 @@
             .navbar {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                
             }
 
         }
@@ -46,16 +45,46 @@
 
 <body>
     <nav class="navbar">
+        
         <a href="/">Home</a>
+
         <a href="#book">Book</a>
+
         <a href="#packages">Packages</a>
+
         <a href="#services">Services</a>
+
         <a href="#gallery">Gallery</a>
+
         <a href="#review">Review</a>
+
         <a href="#contact">Contact</a>
+
         <a href="/register">SignUp</a>
+
         <a href="/login">Login</a>
+
+        {{!-- <i class="fa-solid fa-square-xmark" onclick="closemenu()"></i> --}}
+
     </nav>
+    {{!-- <i class="fa-solid fa-bars" onclick="openmenu()"></i> --}}
+
+
+
+        <!--js code for making manu button  -->
+
+    {{!-- <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu()
+        {
+            sidemenu.style.right = "0";
+        }
+        function closemenu()
+        {
+            sidemenu.style.right =" 100vw";
+        }
+    </script> --}}
 </body>
 
 </html>

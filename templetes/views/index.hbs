@@ -195,8 +195,8 @@
         #packages #myInput {
             padding-right: 1rem;
             padding-left: 1rem;
-            padding-top: .5rem;
-            padding-bottom: .5rem;
+            padding-top: .2rem;
+            padding-bottom: .2rem;
             margin: 1rem;
         }
 
@@ -269,10 +269,10 @@
         }
 
         .carousel-cell {
-            width: 66%;
+            /* width: 66%; */
             height: 400px;
             margin-right: 10px;
-            padding: 4rem;
+            padding: 1rem;
             background: whitesmoke;
             border-radius: 5px;
             counter-increment: gallery-cell;
@@ -371,9 +371,7 @@
                 display: flex;
                 flex-direction: column;
                 background-color: whitesmoke;
-
-                padding-left: .5rem;
-                padding-right: .5rem;
+                padding: .2rem .5rem .2rem .5rem;
                 margin: 1rem;
                 border-radius: 7px;
                 color: black;
@@ -410,10 +408,16 @@
                 display: grid;
                 grid-template-columns: 1fr;
             }
+            #packages .psub img {
+            height: 200px;
+            width: 200px;
+            margin: 1rem;
+
+        }
 
             #services .ssub {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
 
             }
 
@@ -429,6 +433,17 @@
             }
 
         }
+
+                /*Tablets [601px -> 1200px]*/
+        @media only screen and (max-width: 1200px) {
+               header {
+                display: flex;
+                flex-direction: column;
+            }
+            #visitform{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
 
 
 
@@ -450,7 +465,7 @@
             {{!-- <button class="btn"> Discover More</button> --}}
 
             <form id="visitform" action="/visit" method="POST">
-                <label for="location">Location</label>
+                <label for="location" >Location</label>
                 <input type="text" name="location" id="location" placeholder="Enter Your Destination">
                 <label for="date">Date</label>
                 <input type="date" name="date" id="date" placeholder="dd/mm/yyyy">
@@ -501,34 +516,43 @@
             <tr>
                 <td>1.</td>
                 <td>Kuppa Ghat,Bhagalpur</td>
+                <td> <a href="https://goo.gl/maps/XZXNGZDiRfJBoWkaA">Link</a></td>
             </tr>
             <tr>
                 <td>2.</td>
                 <td>Budhanath,Bhagalpur</td>
+                <td> <a href="https://goo.gl/maps/UdumhxLAEEpKQrNK9">Link</a> </td>
             </tr>
             <tr>
                 <td>3.</td>
                 <td>Vikramshila Vishwavidyalay,Bhagalpur,</td>
+                <td> <a href="https://goo.gl/maps/Yj6YmXWqPb6UBf446">Link</a> </td>
             </tr>
             <tr>
                 <td>4.</td>
                 <td>Mandar Hill,Bhagalpur,</td>
+                <td> <a href="https://goo.gl/maps/rKijvmf2uo4pQFWC7">Link</a> </td>
             </tr>
             <tr>
                 <td>5.</td>
                 <td>Kuppa Ghat,Bhagalpur</td>
+                <td> <a href="https://goo.gl/maps/XZXNGZDiRfJBoWkaA">Link</a></td>
+
             </tr>
             <tr>
                 <td>6.</td>
                 <td>Ecco Park,Patna</td>
+                <td> <a href="https://goo.gl/maps/53DW8zHKHLFQbNiv6">Link</a> </td>
             </tr>
             <tr>
                 <td>7.</td>
                 <td>Patna Zoo</td>
+                <td> <a href="https://goo.gl/maps/8ydVaeUbyCoiaAJa6">Link</a></td>
             </tr>
             <tr>
                 <td>8.</td>
-                <td>Bihar Musieum,Patna</td>
+                <td>Bihar Museum,Patna</td>
+                <td> <a href="https://goo.gl/maps/eHouEH2LonUe7ksP7">Links</a></td>
             </tr>
         </table>
 
@@ -753,17 +777,17 @@
 
 
     {{!-- -----------------js for google maps api -------------- --}}
-    <script type="text/javascript">
-
-    & (document).readyState(){
-            var autocomplete;
-            var id = 'location';
-
-            autocomplete = new google.maps.places.Autocomplete((document.getElementById(id)), {
-                types: ['geocode'],
-            })
+    <script>
+        function activatePlacesSearch(){
+            let input = document.getElementById('location');
+            let autocomplete = new google.maps.places.Autocomplete(input);
         }
     </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4u7MWvSxrbGfH9NrpFkbLtPFiCK7eJy8&libraries=places&callback=activatePlacesSearch">
+    </script>
+
+
+
 </body>
 
 </html>
