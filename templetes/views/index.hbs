@@ -14,6 +14,13 @@
     {{!------------------- font awesome ----------- --}}
     <script src="https://kit.fontawesome.com/343b35a2df.js" crossorigin="anonymous"></script>
 
+    {{!---------------------- for map api  ------------------}}
+    {{!-- jquery libraray --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    {{!-- -----------google maps js library------- --}}
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyB4u7MWvSxrbGfH9NrpFkbLtPFiCK7eJy8&libraries=places"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -185,6 +192,14 @@
 
         }
 
+        #packages #myInput{
+            padding-right: 1rem;
+            padding-left: 1rem;
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            margin: 1rem;
+        }
+
         /* --------------------services ----------------------------------*/
         #services {
             display: flex;
@@ -339,7 +354,7 @@
 
     <div id="packages">
         <h1>Popular Tour Places</h1>
-        <input type="text" id="myInput" placeholder="Enter City Name" onkeyup="searchFunction()">
+        <input type="text" id="myInput" placeholder="Enter City Name/Tour Places name" onkeyup="searchFunction()">
 
         <table id="myTable">
             <tr>
@@ -352,23 +367,35 @@
             </tr>
             <tr>
                 <td>1.</td>
-                <td>Bhagalpur,Kuppa Ghat</td>
+                <td>Kuppa Ghat,Bhagalpur</td>
             </tr>
             <tr>
                 <td>2.</td>
-                <td>Bhagalpur,Budhanath</td>
+                <td>Budhanath,Bhagalpur</td>
             </tr>
             <tr>
                 <td>3.</td>
-                <td>Bhagalpur,Vikramshila Vishwavidyalay</td>
+                <td>Vikramshila Vishwavidyalay,Bhagalpur,</td>
             </tr>
             <tr>
                 <td>4.</td>
-                <td>Bhagalpur,Mandar Hill</td>
+                <td>Mandar Hill,Bhagalpur,</td>
             </tr>
             <tr>
                 <td>5.</td>
-                <td>Bhagalpur,Kuppa Ghat</td>
+                <td>Kuppa Ghat,Bhagalpur</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Ecco Park,Patna</td>
+            </tr>
+            <tr>
+                <td>7.</td>
+                <td>Patna Zoo</td>
+            </tr>
+            <tr>
+                <td>8.</td>
+                <td>Bihar Musieum,Patna</td>
             </tr>
         </table>
 
@@ -574,6 +601,20 @@
 
 
         }
+    </script>
+
+
+    {{!-- -----------------js for google maps api -------------- --}}
+    <script type="text/javascript">
+
+    &(document).readyState(){
+        var autocomplete;
+        var id = 'location';
+
+        autocomplete = new google.maps.places.Autocomplete((document.getElementById(id)),{
+            types : ['geocode'],
+        })
+    }
     </script>
 </body>
 
